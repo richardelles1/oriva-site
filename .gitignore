@@ -1,0 +1,7 @@
+# Prevent large folders from being pushed
+.next
+node_modules
+.vercel
+dist
+.env.local
+.env

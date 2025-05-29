@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------
+   Oriva Global Custom Styles
+--------------------------------*/
+
+/* Smooth shimmer effect for hero headline */
+@keyframes shimmer-strong {
+  0% {
+    background-position: -700px 0;
+  }
+  100% {
+    background-position: 700px 0;
+  }
+}
+
+.animate-shimmer-strong {
+  background-size: 1400px 100%;
+  animation: shimmer-strong 4s linear infinite;
+}
+
+/* Soft pulse glow for interactive elements */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 210, 143, 0.3);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 210, 143, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 210, 143, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.66, 0, 0, 1) infinite;
+}
+
+/* Consistent icon style across features */
+.oriva-icon {
+  border-radius: 12px;
+  background-color: rgba(255, 210, 143, 0.05);
+  padding: 6px;
+  box-shadow: 0 0 10px rgba(255, 210, 143, 0.15);
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
