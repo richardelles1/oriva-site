@@ -1,6 +1,6 @@
 // app/api/create-checkout-session/route.ts
 import { NextResponse } from 'next/server'
-import stripe from '@/lib/stripe'
+import stripeClient from '@/lib/stripe' // ✅ CHANGED: alias variable name
 
 export async function POST(req: Request) {
   try {
@@ -9,7 +9,7 @@ export async function POST(req: Request) {
 
     const origin = req.headers.get('origin') || 'http://localhost:3000'
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await stripeClient.checkout.sessions.create({ // ✅ updated usage
       payment_method_types: ['card'],
       mode: 'payment',
       line_items: [
